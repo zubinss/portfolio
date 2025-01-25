@@ -10,7 +10,7 @@ function $$(selector, context = document) {
 //     (a) => a.host === location.host && a.pathname === location.pathname
 // );
 // currentLink?.classList.add('current');
-const BASE_PATH = window.location.pathname.split('/').slice(0, -1).join('/') + '/';
+const BASE_PATH = window.location.pathname.split('/').slice(0, -2).join('/') + '/';
 let pages = [
     { url: '', title: 'Home' },
     { url: 'projects/', title: 'Projects' },
