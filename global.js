@@ -10,7 +10,8 @@ function $$(selector, context = document) {
 //     (a) => a.host === location.host && a.pathname === location.pathname
 // );
 // currentLink?.classList.add('current');
-const ROOT_PATH = window.location.hostname === 'localhost' ? '/' : '/portfolio/';
+const IS_LOCAL = window.location.hostname === 'localhost';
+const ROOT_PATH = IS_LOCAL ? '/' : '/portfolio/';
 let pages = [
   { url: '', title: 'Home' },
   { url: 'projects/', title: 'Projects' },
