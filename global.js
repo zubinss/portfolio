@@ -10,13 +10,13 @@ function $$(selector, context = document) {
 //     (a) => a.host === location.host && a.pathname === location.pathname
 // );
 // currentLink?.classList.add('current');
-
+const BASE_URL = document.querySelector('base')?.href || window.location.origin + '/';
 let pages = [
     { url: '', title: 'Home' },
     { url: 'projects/', title: 'Projects' },
     { url: 'contact/', title: 'Contact' },
     { url: 'resume/', title: 'Resume' },
-    { url: 'github/', title: 'Github' }
+    { url: 'https://github.com/zubinss', title: 'Github' }
 ];
 
 let nav = document.createElement('nav');
