@@ -11,40 +11,33 @@ function $$(selector, context = document) {
 // );
 // currentLink?.classList.add('current');
 const ROOT_PATH = window.location.hostname === 'localhost' ? '/' : '/portfolio/';
-
-// Array of pages with relative URLs and titles
 let pages = [
   { url: '', title: 'Home' },
   { url: 'projects/', title: 'Projects' },
   { url: 'contact/', title: 'Contact' },
   { url: 'resume/', title: 'Resume' },
-  { url: 'https://github.com/zubinss', title: 'GitHub' } // Full URL for external links
+  { url: 'https://github.com/zubinss', title: 'GitHub' } 
 ];
 
-// Check if we're on the home page
 const ARE_WE_HOME = document.documentElement.classList.contains('home');
-
-// Create a <nav> element and add it to the beginning of <body>
 let nav = document.createElement('nav');
 document.body.prepend(nav);
 
-// Loop through the pages and add links to the <nav>
 for (let p of pages) {
   let url = p.url;
   let title = p.title;
 
-  // Adjust the URL for relative paths
   if (!url.startsWith('http')) {
-    // Prefix relative URLs with ROOT_PATH
-    url = ARE_WE_HOME ? ROOT_PATH + url : ROOT_PATH + '../' + url;
-  }
-
-  // Add the link to the <nav>
+    if (ARE_WE_HOME) {
+      url = ROOT_PATH + url; 
+    } else {
+      url = ROOT_PATH + '../' + url; 
+    }
+}
   nav.insertAdjacentHTML('beforeend', `<a href="${url}">${title}</a>`);
 }
 
-// Highlight the current page (optional)
-let currentPath = window.location.pathname.replace(/\/$/, ''); // Remove trailing slash
+let currentPath = window.location.pathname.replace(/\/$/, ''); 
 for (let link of nav.querySelectorAll('a')) {
   let linkPath = new URL(link.href, window.location.origin).pathname.replace(/\/$/, '');
   if (linkPath === currentPath) {
