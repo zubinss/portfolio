@@ -10,7 +10,7 @@ function $$(selector, context = document) {
 //     (a) => a.host === location.host && a.pathname === location.pathname
 // );
 // currentLink?.classList.add('current');
-const BASE_PATH = window.location.pathname.split('/').slice(0, -2).join('/') + '/';
+const ROOT_PATH = '/portfolio/';
 let pages = [
     { url: '', title: 'Home' },
     { url: 'projects/', title: 'Projects' },
@@ -23,8 +23,19 @@ let nav = document.createElement('nav');
 document.body.prepend(nav);
 for (let p of pages) {
     let url = p.url;
-    const ARE_WE_HOME = document.documentElement.classList.contains('home');
-    url = !ARE_WE_HOME && !url.startsWith('http') ? '../' + url : url;
     let title = p.title;
+    // Adjust the URL for relative paths
+    if (!url.startsWith('http')) {
+      url = ROOT_PATH + url; // Prefix relative paths with the root path
+    }
+    // Add the link to the <nav>
     nav.insertAdjacentHTML('beforeend', `<a href="${url}">${title}</a>`);
+  }
+  // Highlight the current page (optional)
+  let currentPath = window.location.pathname.replace(/\/$/, ''); // Remove trailing slash
+  for (let link of nav.querySelectorAll('a')) {
+    let linkPath = new URL(link.href, window.location.origin).pathname.replace(/\/$/, '');
+    if (linkPath === currentPath) {
+      link.classList.add('current');
+    }
   }
