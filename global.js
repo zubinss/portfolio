@@ -14,14 +14,14 @@ function $$(selector, context = document) {
 const IS_LOCAL = window.location.hostname === 'localhost';
 
 // Define the base URL for the project
-const BASE_URL = IS_LOCAL ? '/' : '/portfolio/';
+// const BASE_URL = IS_LOCAL ? '' : '/portfolio/';
 
 // Array of pages with relative URLs and titles
 let pages = [
   { url: '', title: 'Home' },
   { url: 'projects/', title: 'Projects' },
-  { url: 'about/', title: 'About' },
   { url: 'contact/', title: 'Contact' },
+  { url: 'resume/', title: 'Resume' },
   { url: 'https://github.com/zubinss', title: 'GitHub' } // Full URL for external links
 ];
 
@@ -39,7 +39,7 @@ for (let p of pages) {
 
   // If the URL is not an external link, add the base URL prefix
   if (!url.startsWith('http')) {
-    url = BASE_URL + url;  // Prefix relative URLs with BASE_URL
+    url = '/' + url;  // Prefix relative URLs with BASE_URL
   }
 
   // Add the link to the <nav>
