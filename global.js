@@ -39,14 +39,9 @@ for (let p of pages) {
 
   // If the URL is not an external link, add the base URL prefix
   if (!url.startsWith('http')) {
-    // Only prepend BASE_URL to relative links, not full URLs
-    if (IS_LOCAL) {
-      // For localhost, make sure the URL is relative to the root directory
-      url = '/' + url;  // Ensure links are relative to the root
-    } else {
-      // For GitHub Pages, prepend '/portfolio/'
+
       url = BASE_URL + url;
-    }
+    
   }
 
   // Add the link to the <nav>
