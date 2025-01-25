@@ -11,10 +11,10 @@ function $$(selector, context = document) {
 // );
 // currentLink?.classList.add('current');
 // Check if we're on localhost or GitHub Pages
-const IS_LOCAL = window.location.hostname === 'localhost';
+const IS_LOCAL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
 
 // Define the base URL for the project
-// const BASE_URL = IS_LOCAL ? '' : '/portfolio/';
+const BASE_URL = IS_LOCAL ? '' : '/portfolio/';
 
 // Array of pages with relative URLs and titles
 let pages = [
@@ -39,7 +39,14 @@ for (let p of pages) {
 
   // If the URL is not an external link, add the base URL prefix
   if (!url.startsWith('http')) {
-    url = '/' + url;  // Prefix relative URLs with BASE_URL
+    // Only prepend BASE_URL to relative links, not full URLs
+    if (IS_LOCAL) {
+      // For localhost, make sure the URL is relative to the root directory
+      url = '/' + url;  // Ensure links are relative to the root
+    } else {
+      // For GitHub Pages, prepend '/portfolio/'
+      url = BASE_URL + url;
+    }
   }
 
   // Add the link to the <nav>
