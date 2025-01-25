@@ -10,32 +10,44 @@ function $$(selector, context = document) {
 //     (a) => a.host === location.host && a.pathname === location.pathname
 // );
 // currentLink?.classList.add('current');
-const ROOT_PATH = '/portfolio/';
+const ROOT_PATH = window.location.hostname === 'localhost' ? '/' : '/portfolio/';
+
+// Array of pages with relative URLs and titles
 let pages = [
-    { url: '', title: 'Home' },
-    { url: 'projects/', title: 'Projects' },
-    { url: 'contact/', title: 'Contact' },
-    { url: 'resume/', title: 'Resume' },
-    { url: 'https://github.com/zubinss', title: 'Github' }
+  { url: '', title: 'Home' },
+  { url: 'projects/', title: 'Projects' },
+  { url: 'contact/', title: 'Contact' },
+  { url: 'resume/', title: 'Resume' },
+  { url: 'https://github.com/zubinss', title: 'GitHub' } // Full URL for external links
 ];
 
+// Check if we're on the home page
+const ARE_WE_HOME = document.documentElement.classList.contains('home');
+
+// Create a <nav> element and add it to the beginning of <body>
 let nav = document.createElement('nav');
 document.body.prepend(nav);
+
+// Loop through the pages and add links to the <nav>
 for (let p of pages) {
-    let url = p.url;
-    let title = p.title;
-    // Adjust the URL for relative paths
-    if (!url.startsWith('http')) {
-      url = ROOT_PATH + url; // Prefix relative paths with the root path
-    }
-    // Add the link to the <nav>
-    nav.insertAdjacentHTML('beforeend', `<a href="${url}">${title}</a>`);
+  let url = p.url;
+  let title = p.title;
+
+  // Adjust the URL for relative paths
+  if (!url.startsWith('http')) {
+    // Prefix relative URLs with ROOT_PATH
+    url = ARE_WE_HOME ? ROOT_PATH + url : ROOT_PATH + '../' + url;
   }
-  // Highlight the current page (optional)
-  let currentPath = window.location.pathname.replace(/\/$/, ''); // Remove trailing slash
-  for (let link of nav.querySelectorAll('a')) {
-    let linkPath = new URL(link.href, window.location.origin).pathname.replace(/\/$/, '');
-    if (linkPath === currentPath) {
-      link.classList.add('current');
-    }
+
+  // Add the link to the <nav>
+  nav.insertAdjacentHTML('beforeend', `<a href="${url}">${title}</a>`);
+}
+
+// Highlight the current page (optional)
+let currentPath = window.location.pathname.replace(/\/$/, ''); // Remove trailing slash
+for (let link of nav.querySelectorAll('a')) {
+  let linkPath = new URL(link.href, window.location.origin).pathname.replace(/\/$/, '');
+  if (linkPath === currentPath) {
+    link.classList.add('current');
   }
+}
