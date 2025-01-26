@@ -4,6 +4,20 @@ function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
 
+// document.body.insertAdjacentHTML(
+//   'afterbegin',
+  
+//     <label class="color-scheme">
+//       Theme:
+//       <select id="theme-selector">
+//         <option value="light dark">Automatic</option>
+//         <option value="light">Light</option>
+//         <option value="dark">Dark</option>
+//       </select>
+//     </label>
+  
+// );
+
 // navLinks = $$("nav a")
 
 // let currentLink = navLinks.find(
@@ -32,6 +46,7 @@ let pages = [
 
 const ARE_WE_HOME = document.documentElement.classList.contains('home');
 
+
 let nav = document.createElement('nav');
 document.body.prepend(nav);
 
@@ -55,3 +70,10 @@ for (let link of nav.querySelectorAll('a')) {
     link.classList.add('current');
   }
 }
+
+select.addEventListener('input', function (event) {
+  console.log('color scheme changed to', event.target.value);
+});
+
+document.documentElement.style.setProperty('color-scheme', event.target.value);
+
