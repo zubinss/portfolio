@@ -4,19 +4,19 @@ function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
 
-// document.body.insertAdjacentHTML(
-//   'afterbegin',
-  
-//     <label class="color-scheme">
-//       Theme:
-//       <select id="theme-selector">
-//         <option value="light dark">Automatic</option>
-//         <option value="light">Light</option>
-//         <option value="dark">Dark</option>
-//       </select>
-//     </label>
-  
-// );
+document.body.insertAdjacentHTML(
+  'afterbegin',
+  `
+    <label class="color-scheme">
+      Theme:
+      <select id="theme-selector">
+        <option value="light dark">Automatic</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </label>
+  `
+);
 
 // navLinks = $$("nav a")
 
@@ -71,9 +71,18 @@ for (let link of nav.querySelectorAll('a')) {
   }
 }
 
+let select = document.querySelector('select');
+
+if ("colorScheme" in localStorage) {
+  document.documentElement.style.setProperty('color-scheme', localStorage.colorScheme);
+  select.value = localStorage.colorScheme;  
+}
+
 select.addEventListener('input', function (event) {
   console.log('color scheme changed to', event.target.value);
+  document.documentElement.style.setProperty('color-scheme', event.target.value);
+  localStorage.colorScheme = event.target.value;
 });
 
-document.documentElement.style.setProperty('color-scheme', event.target.value);
+
 
