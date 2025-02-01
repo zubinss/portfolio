@@ -1,8 +1,8 @@
 [
     {
-        "title": "Lorem ipsum dolor sit.",
+        "title": "Power Outage Analysis",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat dolorem quas quasi corrupti rerum voluptatibus harum? Quas rerum soluta, temporibus iure doloribus beatae tempora quae veniam, consectetur impedit eos voluptatem!"
+        "description": "Executed comprehensive data cleaning and preprocessing on a dataset of over 1,500 U.S. power outages, transforming time-series data into structured formats and engineering novel features to enhance analytical depth. Designed, implemented, and fine-tuned machine learning models using Random Forest classifiers to predict outage severity, achieving a 5% accuracy boost through targeted feature engineering and hyperparameter optimization. Performed fairness analysis to ensure model performance equity across diverse state populations, demonstrating consistent recall rates for severe outages in both high and low-population states, with robust validation of fairness metrics."
     },
     {
         "title": "Ea illo quidem delectus.",

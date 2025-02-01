@@ -164,3 +164,20 @@ margin-bottom: 0.1rem;
   border-radius: 5px;
   border: 1px solid #ccc;
 }
+
+dl {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four equal-sized columns */
+  text-align: center;
+  gap: 10px; /* Optional: adds spacing between items */
+}
+
+dt {
+  grid-row: 1; /* Places all <dt> elements in the first row */
+  font-weight: bold;
+}
+
+dd {
+  grid-row: 2; /* Places all <dd> elements in the second row */
+  margin: 0;
+}
