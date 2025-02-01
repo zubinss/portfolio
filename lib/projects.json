@@ -2,61 +2,73 @@
     {
         "title": "Power Outage Analysis",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2024",
         "description": "Executed comprehensive data cleaning and preprocessing on a dataset of over 1,500 U.S. power outages, transforming time-series data into structured formats and engineering novel features to enhance analytical depth. Designed, implemented, and fine-tuned machine learning models using Random Forest classifiers to predict outage severity, achieving a 5% accuracy boost through targeted feature engineering and hyperparameter optimization. Performed fairness analysis to ensure model performance equity across diverse state populations, demonstrating consistent recall rates for severe outages in both high and low-population states, with robust validation of fairness metrics."
     },
     {
         "title": "Ea illo quidem delectus.",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2023",
         "description": "Fugiat, cum similique omnis quidem suscipit, maxime molestias quo unde nulla vitae eligendi labore temporibus vel nemo aperiam illo hic amet fuga dolore tempore delectus laborum at. Repudiandae, in atque."
     },
     {
         "title": "Minima odio temporibus eveniet.",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2022",
         "description": "Cumque porro incidunt corporis aspernatur tempora, provident inventore, molestiae adipisci quae eveniet, minima magni. Officiis, eos dolorem! Non, reprehenderit excepturi sed mollitia explicabo vero dolore dolores iste voluptatem voluptatibus nisi!"
     },
     {
         "title": "Illo pariatur et neque!",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2022",
         "description": "Expedita blanditiis, cumque molestiae ducimus quae quis atque nam. Ipsam in quod ex rerum perferendis quas earum quos sequi dicta accusamus iure, fugit iusto, quasi provident quaerat deserunt eius voluptatibus."
     },
     {
         "title": "Cumque deleniti soluta sit.",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2022",
         "description": "Earum sed sapiente corrupti at architecto sint eum debitis, repellendus nemo officia nesciunt et est! Autem esse ea, provident deserunt id tempora iste voluptas? Iste maiores dicta asperiores beatae eius!"
     },
     {
         "title": "Perspiciatis commodi architecto accusantium?",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2022",
         "description": "Eaque tempore eveniet fuga, facilis voluptatibus, excepturi dolorem maiores ratione incidunt qui commodi, temporibus nihil aliquam distinctio voluptas aut perspiciatis? Soluta maxime voluptate maiores facere veniam unde dolore molestiae ad?"
     },
     {
         "title": "Adipisci, eos. Enim, necessitatibus.",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2021",
         "description": "Sunt repellat iste labore tenetur aperiam illum dolore minus esse ab in ipsa vitae reprehenderit ea aut ex ut quasi accusamus, velit laudantium quisquam molestias quas, sapiente quaerat rem! Aliquam."
     },
     {
         "title": "Soluta, enim. Nemo, et.",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2021",
         "description": "Sint nobis consequuntur fugit corrupti quasi, laudantium a soluta enim molestiae minus aliquam adipisci laborum, fuga fugiat est eos in, doloribus quae tenetur iusto id debitis rerum. Corporis, cupiditate explicabo."
     },
     {
         "title": "Recusandae, distinctio? Explicabo, nostrum?",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2021",
         "description": "Mollitia omnis error aspernatur modi rerum culpa! Voluptatem, at veritatis ipsam repellat impedit dignissimos error facilis beatae odio velit doloremque, dolorem aliquid in dolore. Perferendis corporis culpa earum voluptas eius."
     },
     {
         "title": "Fuga accusamus odio reiciendis?",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2021",
         "description": "Magnam blanditiis, minus laboriosam expedita facere eligendi architecto sequi praesentium et sed perferendis sunt iusto hic inventore quasi doloribus cumque quo, corporis, delectus amet voluptates commodi! Provident esse labore odio?"
     },
     {
         "title": "Accusantium ullam voluptatibus provident!",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2020",
         "description": "Corrupti et dolores praesentium facilis hic totam! Sint commodi sapiente illum explicabo, fugit quisquam perspiciatis debitis! Deleniti molestias quae dolores, mollitia, ad ea, totam modi odio repellendus deserunt laudantium obcaecati."
     },
     {
         "title": "Odio similique dolorum illo.",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2020",
         "description": "Repellat quaerat velit temporibus aspernatur tempora exercitationem, sunt blanditiis, quasi eum atque non ut similique nam voluptatum suscipit ex ducimus facere asperiores hic neque. Quibusdam nostrum consectetur ex autem quae."
     }
 ]
