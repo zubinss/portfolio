@@ -58,7 +58,8 @@ grid-column: 1 / -1;
 .projects{
 display: grid;
 grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-gap: 10px
+gap: 10px;
+font-variant-numeric: oldstyle-nums
 }
 article{
 display: grid;
@@ -181,3 +182,51 @@ dd {
   grid-row: 2; /* Places all <dd> elements in the second row */
   margin: 0;
 }
+
+svg {
+  max-width: 20em;
+  margin-block: 2em;
+
+  /* Do not clip shapes outside the viewBox */
+  overflow: visible;
+}
+
+.legend {
+  display: grid;
+  flex-wrap: wrap; 
+  flex: 1;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  gap: 16px; 
+  list-style: none;
+  padding: 8px;
+  margin: 0;
+  outline: 1px solid #333; 
+  align-content: start;
+  width: 100%; /* Ensure it takes full width of its parent */
+  height: auto;
+}
+
+.legend li {
+  display: flex;
+  align-items: center; 
+  gap: 6px; 
+  padding: 6px 12px;
+  flex: 1 1 auto;
+}
+
+.legend .swatch {
+  width: 15px; 
+  height: 15px; 
+  align-items: center; 
+  aspect-ratio: 1 / 1; 
+  background: var(--color); 
+  display: inline-block; 
+  border-radius: 50%; 
+}
+.container {
+  display: flex; 
+  align-items: center; 
+  gap: 20px; 
+  margin: auto; 
+}
+
