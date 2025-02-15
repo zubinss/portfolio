@@ -184,7 +184,7 @@ dd {
 }
 
 svg {
-  max-width: 20em;
+  max-width: 60em;
   margin-block: 2em;
 
   /* Do not clip shapes outside the viewBox */
@@ -257,3 +257,46 @@ path {
   cursor: pointer;
 }
 
+.gridlines line {
+  stroke: #ddd; /* Light gray color */
+  stroke-opacity: 0.6; /* Reduce opacity */
+  stroke-width: 1; /* Thin lines */
+}
+
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+
+dl.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin: 0;
+}
+
+.tooltip {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
+  padding: 8px;
+}
+
+dl.info {
+  /* ... other styles ... */
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
