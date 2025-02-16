@@ -147,7 +147,7 @@ function processCommits() {
   
     // Add total LOC
     dl.append('dt').html('Total <abbr title="Lines of code">LOC</abbr>');
-    dl.append('dd').text(data.length - 76788);
+    dl.append('dd').text(data.length - 76788); 
   
     // Add total commits
     dl.append('dt').text('Total Commits');
