@@ -2,6 +2,11 @@ let data = [];
 let xScale;
 let yScale;
 
+function removeCommit(commitId) {
+    // Filter out the commit with the given commitId
+    commits = commits.filter((commit) => commit.id !== commitId);
+  }
+
 async function loadData() {
     data = await d3.csv('loc.csv', (row) => ({
       ...row,
@@ -135,17 +140,18 @@ function processCommits() {
   function displayStats() {
     // Process commits first
     processCommits();
+    removeCommit('2b07dd33');
   
     // Create the dl element
     const dl = d3.select('#stats').append('dl').attr('class', 'stats');
   
     // Add total LOC
     dl.append('dt').html('Total <abbr title="Lines of code">LOC</abbr>');
-    dl.append('dd').text(data.length);
+    dl.append('dd').text(data.length - 76788);
   
     // Add total commits
     dl.append('dt').text('Total Commits');
-    dl.append('dd').text(commits.length);
+    dl.append('dd').text(commits.length - 1);
   
     // Add more stats as needed...
     const fileLengths = d3.rollups(
