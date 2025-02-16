@@ -2,11 +2,6 @@ let data = [];
 let xScale;
 let yScale;
 
-function removeCommit(commitId) {
-    // Filter out the commit with the given commitId
-    commits = commits.filter((commit) => commit.id !== commitId);
-  }
-
 async function loadData() {
     data = await d3.csv('loc.csv', (row) => ({
       ...row,
@@ -16,18 +11,19 @@ async function loadData() {
       date: new Date(row.date + 'T00:00' + row.timezone),
       datetime: new Date(row.datetime),
     }));
-    
+    const commitToRemove = '2b07dd33'; // Specify the commit ID you want to remove
+    data = data.filter((row) => row.commit !== commitToRemove);
   }
 
 document.addEventListener('DOMContentLoaded', async () => {
   await loadData();
   displayStats(); 
-  console.log(commits); 
   createScatterplot();
   brushSelector();
 });
 
 let commits = [];
+
 function processCommits() {
     commits = d3
       .groups(data, (d) => d.commit)
@@ -141,18 +137,17 @@ function processCommits() {
   function displayStats() {
     // Process commits first
     processCommits();
-    removeCommit('2b07dd33');
   
     // Create the dl element
     const dl = d3.select('#stats').append('dl').attr('class', 'stats');
   
     // Add total LOC
     dl.append('dt').html('Total <abbr title="Lines of code">LOC</abbr>');
-    dl.append('dd').text(data.length - 76788); 
+    dl.append('dd').text(data.length); 
   
     // Add total commits
     dl.append('dt').text('Total Commits');
-    dl.append('dd').text(commits.length - 1);
+    dl.append('dd').text(commits.length);
   
     // Add more stats as needed...
     const fileLengths = d3.rollups(
