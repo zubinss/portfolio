@@ -16,6 +16,7 @@ async function loadData() {
       date: new Date(row.date + 'T00:00' + row.timezone),
       datetime: new Date(row.datetime),
     }));
+    
   }
 
 document.addEventListener('DOMContentLoaded', async () => {
